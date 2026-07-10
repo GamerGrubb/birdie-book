@@ -1,0 +1,185 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Disc Golf Log design system.
+ * Dark pine forest background, parchment scorecard cards, teal chains
+ * accent, rust for over-par/penalties, scoreboard display font +
+ * monospace numerics.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-parchment: var(--parchment);
+  --color-parchment-foreground: var(--parchment-foreground);
+  --color-parchment-line: var(--parchment-line);
+  --color-birdie: var(--birdie);
+  --color-eagle: var(--eagle);
+  --color-bogey: var(--bogey);
+  --color-double: var(--double);
+  --color-chain: var(--chain);
+  --color-rust: var(--rust);
+  --color-silver: var(--silver);
+  --font-display: "Oswald", "Bebas Neue", ui-sans-serif, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Deep pine forest */
+  --background: oklch(0.22 0.03 155);
+  --foreground: oklch(0.94 0.02 90);
+  --card: oklch(0.28 0.035 155);
+  --card-foreground: oklch(0.94 0.02 90);
+  --popover: oklch(0.28 0.035 155);
+  --popover-foreground: oklch(0.94 0.02 90);
+  --primary: oklch(0.75 0.14 165);        /* teal-green chain */
+  --primary-foreground: oklch(0.18 0.03 155);
+  --secondary: oklch(0.33 0.03 155);
+  --secondary-foreground: oklch(0.94 0.02 90);
+  --muted: oklch(0.33 0.03 155);
+  --muted-foreground: oklch(0.72 0.02 120);
+  --accent: oklch(0.72 0.15 60);          /* amber highlight */
+  --accent-foreground: oklch(0.18 0.03 155);
+  --destructive: oklch(0.62 0.19 30);
+  --destructive-foreground: oklch(0.96 0.02 90);
+  --border: oklch(0.36 0.03 155);
+  --input: oklch(0.32 0.03 155);
+  --ring: oklch(0.75 0.14 165);
+
+  /* Parchment scorecard */
+  --parchment: oklch(0.94 0.04 85);
+  --parchment-foreground: oklch(0.28 0.04 45);
+  --parchment-line: oklch(0.82 0.05 60);
+
+  /* Performance colors */
+  --birdie: oklch(0.78 0.16 165);   /* teal for under-par */
+  --eagle: oklch(0.72 0.19 155);
+  --bogey: oklch(0.72 0.16 55);     /* rust/orange for over-par */
+  --double: oklch(0.62 0.2 30);
+  --chain: oklch(0.78 0.04 90);     /* silver */
+  --rust: oklch(0.65 0.17 45);
+  --silver: oklch(0.78 0.02 120);
+
+  --chart-1: oklch(0.75 0.14 165);
+  --chart-2: oklch(0.72 0.15 60);
+  --chart-3: oklch(0.62 0.19 30);
+  --chart-4: oklch(0.78 0.04 90);
+  --chart-5: oklch(0.55 0.12 200);
+
+  --sidebar: oklch(0.25 0.03 155);
+  --sidebar-foreground: oklch(0.94 0.02 90);
+  --sidebar-primary: oklch(0.75 0.14 165);
+  --sidebar-primary-foreground: oklch(0.18 0.03 155);
+  --sidebar-accent: oklch(0.33 0.03 155);
+  --sidebar-accent-foreground: oklch(0.94 0.02 90);
+  --sidebar-border: oklch(0.36 0.03 155);
+  --sidebar-ring: oklch(0.75 0.14 165);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, oklch(0.3 0.05 165 / 0.5), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, oklch(0.28 0.05 145 / 0.4), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, .display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+
+  .num, .mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Parchment scorecard styling */
+@utility scorecard {
+  background: linear-gradient(180deg, var(--parchment) 0%, oklch(0.9 0.05 80) 100%);
+  color: var(--parchment-foreground);
+  border-radius: 0.5rem;
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.4) inset,
+    0 10px 30px -10px oklch(0 0 0 / 0.5);
+  position: relative;
+}
+
+@utility scorecard-perforated {
+  --dot: oklch(0.22 0.03 155);
+  background-image:
+    radial-gradient(circle at 0 8px, var(--dot) 3px, transparent 3.5px),
+    radial-gradient(circle at 100% 8px, var(--dot) 3px, transparent 3.5px);
+  background-size: 16px 16px, 16px 16px;
+  background-repeat: repeat-y, repeat-y;
+  background-position: left top, right top;
+}
+
+@utility disc-card {
+  background: linear-gradient(135deg, var(--card) 0%, oklch(0.32 0.04 155) 100%);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+@utility rating-badge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Recharts theming */
+.recharts-cartesian-grid line {
+  stroke: oklch(1 0 0 / 0.06);
+}

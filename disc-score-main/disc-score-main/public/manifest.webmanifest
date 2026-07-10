@@ -1,0 +1,15 @@
+{
+  "name": "Disc Golf Log",
+  "short_name": "DG Log",
+  "description": "Private disc golf round tracker, disc bag, and stats.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1a15",
+  "theme_color": "#0f1a15",
+  "icons": [
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
