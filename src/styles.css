@@ -76,13 +76,13 @@
   --card-foreground: oklch(0.94 0.02 90);
   --popover: oklch(0.28 0.035 155);
   --popover-foreground: oklch(0.94 0.02 90);
-  --primary: oklch(0.75 0.14 165);        /* teal-green chain */
+  --primary: oklch(0.75 0.14 165); /* teal-green chain */
   --primary-foreground: oklch(0.18 0.03 155);
   --secondary: oklch(0.33 0.03 155);
   --secondary-foreground: oklch(0.94 0.02 90);
   --muted: oklch(0.33 0.03 155);
   --muted-foreground: oklch(0.72 0.02 120);
-  --accent: oklch(0.72 0.15 60);          /* amber highlight */
+  --accent: oklch(0.72 0.15 60); /* amber highlight */
   --accent-foreground: oklch(0.18 0.03 155);
   --destructive: oklch(0.62 0.19 30);
   --destructive-foreground: oklch(0.96 0.02 90);
@@ -96,11 +96,11 @@
   --parchment-line: oklch(0.82 0.05 60);
 
   /* Performance colors */
-  --birdie: oklch(0.78 0.16 165);   /* teal for under-par */
+  --birdie: oklch(0.78 0.16 165); /* teal for under-par */
   --eagle: oklch(0.72 0.19 155);
-  --bogey: oklch(0.72 0.16 55);     /* rust/orange for over-par */
+  --bogey: oklch(0.72 0.16 55); /* rust/orange for over-par */
   --double: oklch(0.62 0.2 30);
-  --chain: oklch(0.78 0.04 90);     /* silver */
+  --chain: oklch(0.78 0.04 90); /* silver */
   --rust: oklch(0.65 0.17 45);
   --silver: oklch(0.78 0.02 120);
 
@@ -135,12 +135,16 @@
     background-attachment: fixed;
   }
 
-  h1, h2, h3, .display {
+  h1,
+  h2,
+  h3,
+  .display {
     font-family: var(--font-display);
     letter-spacing: 0.01em;
   }
 
-  .num, .mono {
+  .num,
+  .mono {
     font-family: var(--font-mono);
     font-variant-numeric: tabular-nums;
   }
@@ -162,9 +166,13 @@
   background-image:
     radial-gradient(circle at 0 8px, var(--dot) 3px, transparent 3.5px),
     radial-gradient(circle at 100% 8px, var(--dot) 3px, transparent 3.5px);
-  background-size: 16px 16px, 16px 16px;
+  background-size:
+    16px 16px,
+    16px 16px;
   background-repeat: repeat-y, repeat-y;
-  background-position: left top, right top;
+  background-position:
+    left top,
+    right top;
 }
 
 @utility disc-card {

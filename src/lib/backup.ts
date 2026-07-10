@@ -51,7 +51,12 @@ function validate(obj: unknown): BackupFile {
   if (!obj || typeof obj !== "object") throw new Error("Invalid file");
   const b = obj as Partial<BackupFile>;
   if (b.app !== "disc-golf-log") throw new Error("Not a Disc Golf Log backup");
-  if (!b.data || !Array.isArray(b.data.courses) || !Array.isArray(b.data.discs) || !Array.isArray(b.data.rounds)) {
+  if (
+    !b.data ||
+    !Array.isArray(b.data.courses) ||
+    !Array.isArray(b.data.discs) ||
+    !Array.isArray(b.data.rounds)
+  ) {
     throw new Error("Backup missing data arrays");
   }
   return b as BackupFile;

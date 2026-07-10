@@ -27,8 +27,7 @@ export function computeTotals(round: Round, course: Course): RoundTotals {
 
   const toPar = totalScore - totalPar;
   const rating =
-    course.anchorRating +
-    (course.anchorScore - totalScore) * (course.pointsPerThrow || 15);
+    course.anchorRating + (course.anchorScore - totalScore) * (course.pointsPerThrow || 15);
 
   return {
     totalScore,
@@ -38,9 +37,7 @@ export function computeTotals(round: Round, course: Course): RoundTotals {
     puttsMade,
     fairwayHits,
     fairwayEligible,
-    fairwayPct: fairwayEligible
-      ? Math.round((fairwayHits / fairwayEligible) * 100)
-      : 0,
+    fairwayPct: fairwayEligible ? Math.round((fairwayHits / fairwayEligible) * 100) : 0,
     penalties,
     rating: Math.round(rating),
   };
